@@ -3,14 +3,14 @@ var net=require("net");
 
 var server=net.createServer();
 
-server.on( "connection" , conn) ;
-server.on( "listening" , startt) ;
+server.on( "connection" , connexion) ;
+server.on( "listening" , demarrage) ;
 
-function startt(socket) {
+function demarrage(socket) {
 	console.log("started");
 }
 
-function conn(socket) {
+function connexion(socket) {
 	console.log("connected from "+socket.remoteAddress);
 	socket.write("hello "+socket.remoteAddress+"\n");
 	socket.end();
